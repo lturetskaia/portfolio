@@ -1,0 +1,104 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  --bgr-main: rgb(30, 29, 31);
+  --font-main: white;
+  --font-accent: rgb(99, 222, 238);
+  --gradient-main: rgb(78, 253, 249);
+  --gradient-accent: rgb(153, 52, 243);
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--font-main);
+  background-color: var(--bgr-main);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-main);
+}
+
+nav {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  padding: 0 5rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  position: fixed;
+  top: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 5rem;
+}
+
+#menu {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+
+#hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#hero div {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#hero a {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  background: linear-gradient(var(--bgr-main) 0 0) padding-box,
+    linear-gradient(90deg, var(--gradient-main), var(--gradient-accent))
+      border-box;
+  border: 3px solid transparent;
+  border-radius: 10px;
+}
+
+#hero a:focus,
+#hero a:focus-visible,
+#hero a:hover {
+  background: linear-gradient(
+        90deg,
+        var(--gradient-main),
+        var(--gradient-accent)
+      )
+      text,
+    linear-gradient(var(--bgr-main) 0 0) padding-box,
+    linear-gradient(90deg, var(--gradient-main), var(--gradient-accent))
+      border-box;
+  color: transparent;
+}
+
+h1 span {
+  background: linear-gradient(
+    90deg,
+    var(--gradient-main),
+    var(--gradient-accent)
+  );
+  background-clip: text;
+  color: transparent;
+}
