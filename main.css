@@ -12,10 +12,13 @@ html {
   --font-accent: rgb(99, 222, 238);
   --gradient-main: rgb(78, 253, 249);
   --gradient-accent: rgb(153, 52, 243);
+  --gradient-angle: 90deg;
 }
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  font-weight: normal;
   color: var(--font-main);
   background-color: var(--bgr-main);
   margin: 0;
@@ -37,12 +40,37 @@ nav {
   font-size: 1.3rem;
   position: fixed;
   top: 0;
+  background-color: var(--bgr-main);
+  border-bottom: 2px solid rgba(153, 52, 243, 0.2);
+  z-index: 1;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: bold;
   line-height: 5rem;
+}
+
+h1 span {
+  background: linear-gradient(
+    90deg,
+    var(--gradient-main),
+    var(--gradient-accent)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 5rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin: 0 0 3rem 0;
 }
 
 #menu {
@@ -66,7 +94,7 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-#hero a {
+.btn {
   display: inline-block;
   margin-top: 2rem;
   padding: 10px 20px;
@@ -76,29 +104,145 @@ h1 {
       border-box;
   border: 3px solid transparent;
   border-radius: 10px;
+  text-align: center;
+  transition: all 0.5s;
 }
 
-#hero a:focus,
-#hero a:focus-visible,
-#hero a:hover {
-  background: linear-gradient(
-        90deg,
-        var(--gradient-main),
-        var(--gradient-accent)
+.btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn:focus,
+.btn:focus-visible,
+.btn:hover {
+  padding-right: 25px;
+  background: linear-gradient(var(--bgr-main) 0 0) padding-box,
+    conic-gradient(
+        from var(--gradient-angle),
+        transparent,
+        var(--gradient-main) 30%,
+        var(--gradient-accent) 60%,
+        transparent 90%
       )
-      text,
-    linear-gradient(var(--bgr-main) 0 0) padding-box,
-    linear-gradient(90deg, var(--gradient-main), var(--gradient-accent))
       border-box;
-  color: transparent;
 }
 
-h1 span {
+.btn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.btn:hover span {
+  padding-right: 25px;
+}
+.btn:hover span:after {
+  opacity: 1;
+  right: -10px;
+}
+
+.btn:active {
+  background: linear-gradient(
+      90deg,
+      var(--gradient-main),
+      var(--gradient-accent)
+    )
+    padding-box;
+}
+
+.content {
+  width: 70%;
+  margin: 0 auto 4rem auto;
+  padding-top: 3rem;
+}
+
+#about-content {
+  display: flex;
+  padding: 3rem 0 3rem 0;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#about-text,
+#about-images {
+  width: 50%;
+  justify-items: center;
+}
+
+#projects {
+  width: 95%;
+}
+
+.ctrl-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hex-container {
+  display: block;
+  position: relative;
+  width: 120px;
+  justify-content: center;
+}
+
+.hexagon-outer {
+  height: 120px;
+  aspect-ratio: cos(30deg);
+  clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
   background: linear-gradient(
     90deg,
     var(--gradient-main),
     var(--gradient-accent)
   );
-  background-clip: text;
-  color: transparent;
+}
+
+.hexagon-inner {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  height: 110px;
+  aspect-ratio: cos(30deg);
+  clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0%);
+  object-fit: cover;
+  background-color: black;
+}
+
+.project-item {
+  padding: 4rem 25rem 4rem 0;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.project-item:nth-of-type(even) {
+  padding: 4rem 0 4rem 25rem;
+}
+
+.prj-description {
+  width: 30%;
+}
+
+.prj-image {
+  width: 70%;
+}
+.prj-image img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+footer {
+  font-size: 0.8rem;
+  color: rgb(186, 185, 185);
+  text-align: center;
+  padding: 2rem 0 2rem 0;
+  border-top: 2px solid rgba(153, 52, 243, 0.2);
 }

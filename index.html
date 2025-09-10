@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer></script>
     <title>Larisa Turetskaia | Portfolio</title>
   </head>
   <body>
     <nav>
       <div>Logo</div>
       <div id="menu">
-        <a href="#about">About me</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contacts">Contacts</a>
       </div>
@@ -21,12 +22,128 @@
           Hello, I'm Larisa Turetskaia, <br />
           <span>Full Stack Developer</span>
         </h1>
-        <a href="#about">View my work  &darr;</a>
+        <a href="#about" class="btn" id="viewBtn" role="button"
+          ><span>View my work</span></a
+        >
       </div>
     </section>
-    <section id="about"></section>
-    <section id="projects"></section>
-    <section id="contacts"></section>
+    <section class="content" id="about">
+      <h2>About</h2>
+      <div id="about-content">
+        <div id="about-text">
+          <p>
+            Some long and inspiring text about me and my experience in
+            programming is going to be here...
+          </p>
+          <a href="CV.pdf" download="CV" class="btn" role="button"
+            >Download CV</a
+          >
+        </div>
+        <div id="about-images">
+          <div class="ctrl-row" id="row-1">
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/js.png" class="hexagon-inner" alt="" />
+            </div>
+
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/react.png" class="hexagon-inner" alt="" />
+            </div>
+          </div>
+
+          <div class="ctrl-row" id="row-2">
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/html.png" class="hexagon-inner" alt="" />
+            </div>
+
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/css.png" class="hexagon-inner" alt="" />
+            </div>
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/nodejs.png" class="hexagon-inner" alt="" />
+            </div>
+          </div>
+
+          <div class="ctrl-row" id="row-3">
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/p5js.jpg" class="hexagon-inner" alt="" />
+            </div>
+
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/react.png" class="hexagon-inner" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content" id="projects">
+      <h2>Projects</h2>
+      <div class="project-item">
+        <div class="prj-image">
+          <img
+            src="/images/todo-list-project.png"
+            alt="Screenshot of the to-do list app project"
+          />
+        </div>
+        <div class="prj-description">
+          <h3>To-Do List</h3>
+          <p>
+            This is a long and detailed description of the project and its
+            features
+          </p>
+          <a href="https://teapod.dev/todo-list/" class="btn" role="button"
+            ><span>Go to the app</span></a
+          >
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="prj-description">
+          <h3>2D Side Scrolling Game</h3>
+          <p>
+            This is a long and detailed description of the project and its
+            features
+          </p>
+          <a href="https://teapod.dev/side-scroller/" class="btn" role="button"
+            ><span>Go to the app</span></a
+          >
+        </div>
+        <div class="prj-image">
+          <img
+            src="/images/side-scroller-project.png"
+            alt="Screenshot of the 2D side scrolling game"
+          />
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="prj-image">
+          <img
+            src="/images/drawing-app-project.png"
+            alt="Screenshot of the drawing app project"
+          />
+        </div>
+        <div class="prj-description">
+          <h3>Web Drawing App</h3>
+          <p>
+            This is a long and detailed description of the project and its
+            features
+          </p>
+          <a href="https://teapod.dev/drawing-app/" class="btn" role="button"
+            ><span>Go to the app</span></a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="content" id="contacts">
+      <h2>Contacts</h2>
+    </section>
     <footer>Larisa Turetskaia @ 2025</footer>
   </body>
 </html>
