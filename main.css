@@ -28,6 +28,8 @@ body {
 a {
   text-decoration: none;
   color: var(--font-main);
+  transition: 0.2s;
+  text-decoration: none;
 }
 
 nav {
@@ -38,11 +40,38 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-size: 1.3rem;
-  position: fixed;
+  position: absolute;
   top: 0;
-  background-color: var(--bgr-main);
-  border-bottom: 2px solid rgba(153, 52, 243, 0.2);
+  left: 0;
+  background: linear-gradient(var(--bgr-main) 0 0) padding-box,
+    linear-gradient(90deg, var(--gradient-accent), var(--gradient-main))
+      border-box;
+  border-bottom: 1px solid transparent;
   z-index: 1;
+}
+
+nav a:focus,
+nav a:focus-visible,
+nav a:hover {
+  background: linear-gradient(
+        90deg,
+        var(--gradient-main),
+        var(--gradient-accent)
+      )
+      text,
+    linear-gradient(var(--bgr-main) 0 0) padding-box,
+    linear-gradient(90deg, var(--gradient-accent), var(--gradient-main))
+      border-box;
+
+  color: rgba(255, 255, 255, 0.438);
+  text-decoration: none;
+}
+
+nav img {
+  /* position: relative;
+  top: 0;
+  left: 0; */
+  height: 4rem;
 }
 
 h1 {
@@ -75,7 +104,7 @@ h3 {
 
 #menu {
   display: flex;
-  width: 30%;
+  width: 20%;
   justify-content: space-between;
 }
 
@@ -117,7 +146,9 @@ h3 {
 
 .btn:focus,
 .btn:focus-visible,
-.btn:hover {
+.btn:hover,
+.btn:active {
+  color: rgb(161, 238, 243);
   padding-right: 25px;
   background: linear-gradient(var(--bgr-main) 0 0) padding-box,
     conic-gradient(
@@ -146,17 +177,19 @@ h3 {
   right: -10px;
 }
 
-.btn:active {
+.btn:not(:disabled):not(.disabled):active {
   background: linear-gradient(
       90deg,
       var(--gradient-main),
       var(--gradient-accent)
     )
     padding-box;
+  color: white;
 }
 
 .content {
-  width: 70%;
+  width: 95%;
+  max-width: 1800px;
   margin: 0 auto 4rem auto;
   padding-top: 3rem;
 }
@@ -171,12 +204,18 @@ h3 {
 
 #about-text,
 #about-images {
-  width: 50%;
-  justify-items: center;
+  width: fit-content;
 }
+
+#about-text {
+  justify-items: left;
+  width: 50%;
+}
+
 
 #projects {
   width: 95%;
+  max-width: 1800px;
 }
 
 .ctrl-row {
@@ -227,7 +266,7 @@ h3 {
 }
 
 .prj-description {
-  width: 40%;
+  width: 45%;
 }
 
 .prj-image {
@@ -237,6 +276,19 @@ h3 {
   width: 100%;
   object-fit: cover;
   border-radius: 6px;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%4efdf9' stroke='white' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%4efdf9' stroke='white' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+svg {
+  stroke: #fffdfd;
+  stroke-width: 1px;
+  stroke-linejoin: round;
 }
 
 footer {
