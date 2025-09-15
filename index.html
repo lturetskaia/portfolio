@@ -31,7 +31,7 @@
   <body>
     <nav>
       <div>
-        <img src="/images/logo.png" alt="">
+        <img src="/images/logo.png" alt="" />
       </div>
       <div id="menu">
         <a href="#about">About</a>
@@ -51,7 +51,10 @@
       </div>
     </section>
     <section class="content" id="about">
-      <h2>About</h2>
+      <div class="h2-control">
+        <h2>About</h2>
+        <span class="underline"></span>
+      </div>
       <div id="about-content">
         <div id="about-text">
           <p>
@@ -71,6 +74,11 @@
 
             <div class="hex-container">
               <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/ts.png" class="hexagon-inner" alt="" />
+            </div>
+
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
               <img src="/images/react.png" class="hexagon-inner" alt="" />
             </div>
           </div>
@@ -85,6 +93,12 @@
               <img src="" class="hexagon-outer" alt="" />
               <img src="/images/css.png" class="hexagon-inner" alt="" />
             </div>
+
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/css.png" class="hexagon-inner" alt="" />
+            </div>
+
             <div class="hex-container">
               <img src="" class="hexagon-outer" alt="" />
               <img src="/images/nodejs.png" class="hexagon-inner" alt="" />
@@ -99,35 +113,33 @@
 
             <div class="hex-container">
               <img src="" class="hexagon-outer" alt="" />
-              <img src="/images/react.png" class="hexagon-inner" alt="" />
+              <img src="/images/p5js.jpg" class="hexagon-inner" alt="" />
+            </div>
+
+            <div class="hex-container">
+              <img src="" class="hexagon-outer" alt="" />
+              <img src="/images/bootstrap.jpg" class="hexagon-inner" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="content" id="projects">
-      <h2>Projects</h2>
+    <section id="projects" class="content">
+      <div class="h2-control">
+        <h2>Projects</h2>
+        <span class="underline"></span>
+      </div>
       <div class="project-item">
         <div class="prj-image">
-          <div
-            id="todo-carousel"
-            class="carousel slide"
-            data-ride="carousel"
-          >
+          <div id="todo-carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li
                 data-target="#todo-carousel"
                 data-slide-to="0"
                 class="active"
               ></li>
-              <li
-                data-target="#todo-carousel"
-                data-slide-to="1"
-              ></li>
-              <li
-                data-target="#todo-carousel"
-                data-slide-to="2"
-              ></li>
+              <li data-target="#todo-carousel" data-slide-to="1"></li>
+              <li data-target="#todo-carousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -181,9 +193,14 @@
         <div class="prj-description">
           <h3>To-Do List</h3>
           <p>
-            This is a long and detailed description of the project and its
-            features
-          </p>
+            Full-stack task management application deployed on a DigitalOcean
+            Droplet, featuring:</p>
+            <ul>
+              <li>a responsive React frontend</li>
+              <li>a RESTful API using Node.js, Express.js</li>
+              <li>MySQL database for storing and serving project data</li>
+              <li>Nginx for routing and reverse-proxy</li>
+            </ul>
           <a href="https://teapod.dev/todo-list/" class="btn" role="button"
             ><span>Go to the app</span></a
           >
@@ -194,33 +211,33 @@
         <div class="prj-description">
           <h3>2D Side Scrolling Game</h3>
           <p>
-            This is a long and detailed description of the project and its
-            features
+            Multilevel side scrolling game created with P5.js and P5.Sound
+            libraries:
           </p>
+          <ul>
+            <li>
+              based on custom graphics and animations drawn with the Canvas API
+            </li>
+            <li>
+              includes complex game logic, including collision detection, score
+              and lives tracking and more
+            </li>
+          </ul>
+
           <a href="https://teapod.dev/side-scroller/" class="btn" role="button"
             ><span>Go to the app</span></a
           >
         </div>
         <div class="prj-image">
-          <div
-            id="game-carousel"
-            class="carousel slide"
-            data-ride="carousel"
-          >
+          <div id="game-carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li
                 data-target="#game-carousel"
                 data-slide-to="0"
                 class="active"
               ></li>
-              <li
-                data-target="#game-carousel"
-                data-slide-to="1"
-              ></li>
-              <li
-                data-target="#game-carousel"
-                data-slide-to="2"
-              ></li>
+              <li data-target="#game-carousel" data-slide-to="1"></li>
+              <li data-target="#game-carousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -300,24 +317,30 @@
                 data-slide-to="0"
                 class="active"
               ></li>
-              <li
-                data-target="#drawing-app-carousel"
-                data-slide-to="1"
-              ></li>
-              <li
-                data-target="#drawing-app-carousel"
-                data-slide-to="2"
-              ></li>
+              <li data-target="#drawing-app-carousel" data-slide-to="1"></li>
+              <li data-target="#drawing-app-carousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="/images/drawing-app-shapes.png" alt="Overlapping Shapes with different level of opacity drawn on the canvas." />
+                <img
+                  class="d-block w-100"
+                  src="/images/drawing-app-shapes.png"
+                  alt="Overlapping Shapes with different level of opacity drawn on the canvas."
+                />
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="/images/drawing-app-mirror.png" alt="A fir-tree drawn on the canvas with the mirror tool." />
+                <img
+                  class="d-block w-100"
+                  src="/images/drawing-app-mirror.png"
+                  alt="A fir-tree drawn on the canvas with the mirror tool."
+                />
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="/images/drawing-app-cut-paste.png" alt="Screenshot of the cut and paste function of the drawing app." />
+                <img
+                  class="d-block w-100"
+                  src="/images/drawing-app-cut-paste.png"
+                  alt="Screenshot of the cut and paste function of the drawing app."
+                />
               </div>
             </div>
             <a
@@ -349,18 +372,69 @@
         <div class="prj-description">
           <h3>Web Drawing App</h3>
           <p>
-            This is a long and detailed description of the project and its
-            features
+            Web-based drawing application: • created with P5.js library and
+            canvas API:
           </p>
+          <ul>
+            <li>
+              uses an optimized version of the four-way flood fill algorithm
+            </li>
+            <li>
+              offers various drawing tools and functions, import/export images and more
+            </li>
+          </ul>
           <a href="https://teapod.dev/drawing-app/" class="btn" role="button"
             ><span>Go to the app</span></a
           >
         </div>
       </div>
     </section>
-    <section class="content" id="contacts">
-      <h2>Contacts</h2>
+    <section id="contacts">
+      <div class="h2-control">
+        <h2>Contacts</h2>
+        <span class="underline"></span>
+      </div>
+      <img id="status-image" src="" alt="" />
+      <p id="status"></p>
+      <p id="message"></p>
+      <p id="info">
+        Send your message and I'll get back to you as soon as possible.
+      </p>
+      <form action="" id="contact-form">
+        <div class="mb-3">
+          <label for="user-name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="user-name"
+            name="name"
+            autocomplete="on"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="user-email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="user-email"
+            placeholder="name@example.com"
+            name="email"
+            autocomplete="on"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="user-message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="user-message"
+            name="message"
+            rows="5"
+          ></textarea>
+        </div>
+        <div><button class="btn" id="form-btn">Submit</button></div>
+      </form>
     </section>
+
     <footer>Larisa Turetskaia @ 2025</footer>
   </body>
 </html>
